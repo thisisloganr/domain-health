@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import os
 import xlsxwriter
+import time
 from datetime import datetime, timedelta, date
 import advertools as adv
 from advertools import serp_goog
@@ -122,6 +123,7 @@ df['Canonical Status'] = df['Count'].apply(state)
 # Get quantity of indexed URLs
 def index_count(x):
 	try:
+		time.sleep(1) #slows down API requests to circumvent limits
 		list = []
 		###Replace cx and key values when you setup your Google Custom Search Engine: https://serpstat.com/blog/retrieve-google-search-results-into-a-dataframe-using-python/
 		df_index = adv.serp_goog("site:" + x, cx="", key="")
