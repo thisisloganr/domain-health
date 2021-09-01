@@ -53,8 +53,12 @@ def url_access(x):
 ###Canonical Domain Check
 # Remove protocol, subdomain, trailing slash
 def clean(x):
-    return (x.replace("https://","").replace("http://","").replace("www.","").replace(".com/",".com").replace(".org/",".org").replace(".us/",".us").replace(".edu/",".edu")).lower()
-df['Clean'] = df[list(df.columns)[1]].apply(clean)
+  if x[-1] == "/":
+    x = x[:-1]
+  else:
+    x
+  return (x.replace("https://","").replace("http://","").replace("www.","")).lower()
+df['Clean'] = df[list(df.columns)[0]].apply(clean)
 
 # Create list with each protocol and www combo
 def canon_status(x):
