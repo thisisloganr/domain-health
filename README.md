@@ -13,3 +13,4 @@
 5. All variables that you need to set are denoted by a ### comment
 
 6. The last piece is automation, I recommend using Task Scheduler if you're on Windows. I run this once a week but frequency is easily adjustable in TS.
+7. If you run into any issues, send me a DM at https://twitter.com/logan_d_ray
